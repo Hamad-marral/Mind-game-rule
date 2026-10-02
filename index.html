@@ -42,13 +42,13 @@ const c=(n,cls='',txt)=>`<div class="row ${cls}">${Array.from({length:n},(_,i)=>
 const g=(n,l,cls,txt)=>`<div class="grp ${cls||''}">${c(n,'',txt)}<small>${l}</small></div>`;
 const sw=(a,la,b,lb,ca,cb)=>g(a,la,ca)+`<span class="arr">⇄</span>`+g(b,lb,cb);
 const R=[
-['6','You can exchange your all cards [one card per person] with any three persons',
+['6','Exchange your all cards [one card per person] with any three persons',
  g(3,'Your 3 cards','me')+`<span class="arr">⇄</span>`+['P1','P2','P3'].map(p=>g(1,p)).join(' ')],
 ['7','Exchange your three cards with any person\'s three cards',sw(3,'You',3,'Any person','me')],
 ['8','Exchange any person\'s three cards with other\'s three cards',sw(3,'Person A',3,'Person B')],
 ['9','Exchange any person\'s two cards with other\'s two cards',sw(2,'Person A',2,'Person B')],
 ['10','You can see your own cards',`<span class="eye">👁</span>`+g(3,'Your cards','me')],
-['A','Exchange any person\'s one card with other\'s one card',sw(1,'Person A',1,'Person B')],
+['A','Exchange your one card with other\'s one card',sw(1,'You',1,'Other','me')],
 ['J','Change the order of any person\'s three cards',g(3,'Before','num',[1,2,3])+`<span class="arr">🔀</span>`+g(3,'After','num',[3,1,2])],
 ['Q','Exchange your two cards with any person\'s two cards',sw(2,'You',2,'Any person','me')],
 ['K','Mix any person\'s three cards in deck and give him new three cards',g(3,'Their cards','num',[1,2,3])+`<span class="arr">→ 🂠 →</span>`+g(3,'New cards','num',['?','?','?'])]
